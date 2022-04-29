@@ -2,6 +2,16 @@ image:
   file: .gitpod/Dockerfile
   context: .gitpod
 
+ports:
+  - port: 3000
+    onOpen: open-preview
+
+tasks:
+  - init: yarn
+    env:
+      NUXT_TELEMETRY_DISABLED: 1
+    command: yarn dev
+
 vscode:
   extensions:
     - EditorConfig.EditorConfig
